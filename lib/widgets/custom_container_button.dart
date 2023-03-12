@@ -6,34 +6,45 @@ import '../constants/colors.dart';
 
 class BuildCustomContainerButton extends StatelessWidget {
   final String buttonText;
+  final double height;
+  final Color bgColor;
+  final Color textColor;
+  final double textSize;
+  final bool isShadowRequired;
   const BuildCustomContainerButton({
     required this.buttonText,
+    this.height=75,
+    this.bgColor=black,
+    this.textColor=white,
+    this.textSize=19,
+    this.isShadowRequired=true,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Size size=MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Container(
-        height: 75,
-        width: double.infinity,
+        height: height,
+        width: size.width,
         decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
+                color: isShadowRequired?Colors.grey.withOpacity(0.5):Colors.transparent,
                 spreadRadius: 5,
                 blurRadius: 7,
                 offset: const Offset(0, 3),
               ),
             ],
-            color: black,
+            color: bgColor,
             borderRadius: const BorderRadius.all(Radius.circular(40))),
         child: Center(
             child: Text(
           buttonText,
           style: GoogleFonts.roboto(
-              color: white, fontSize: 19, fontWeight: FontWeight.w500),
+              color: textColor, fontSize: textSize, fontWeight: FontWeight.w500),
         )),
       ),
     );

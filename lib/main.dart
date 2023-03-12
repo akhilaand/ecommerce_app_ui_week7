@@ -1,4 +1,6 @@
+import 'package:cloth_app/presentation/homeScreen/home_screen.dart';
 import 'package:cloth_app/presentation/landingScreen/landing_screen.dart';
+import 'package:cloth_app/widgets/bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const LandingScreen(),
+      home: const CustomBottomNavigtionBar(),
     );
   }
 }
