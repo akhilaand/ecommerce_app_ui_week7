@@ -1,3 +1,4 @@
+// Project imports:
 import '../modal/product_list_modal.dart';
 
 List<ProductListModal> productList = [

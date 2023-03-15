@@ -1,8 +1,12 @@
-import 'package:cloth_app/presentation/homeScreen/home_screen.dart';
-import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
 
-import '../constants/colors.dart';
+// Package imports:
+import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
+
+// Project imports:
+import 'package:cloth_app/presentation/categoryScreen/category_screen.dart';
+import 'package:cloth_app/presentation/homeScreen/home_screen.dart';
 
 class CustomBottomNavigtionBar extends StatefulWidget {
   const CustomBottomNavigtionBar({Key? key}) : super(key: key);
@@ -14,10 +18,10 @@ class CustomBottomNavigtionBar extends StatefulWidget {
 
 class _CustomBottomNavigtionBarState extends State<CustomBottomNavigtionBar> {
   static final _pageList = [
-    HomeScreen(),
-    HomeScreen(),
-    HomeScreen(),
-    HomeScreen()
+    const HomeScreen(),
+    const CategoryScreen(),
+    const HomeScreen(),
+    const HomeScreen()
   ];
   int currentIndex = 0;
   @override
@@ -39,8 +43,8 @@ class _CustomBottomNavigtionBarState extends State<CustomBottomNavigtionBar> {
         items: [
           FloatingNavbarItem(icon: Icons.home, title: 'Home'),
           FloatingNavbarItem(icon: Icons.explore, title: 'Explore'),
-          FloatingNavbarItem(icon: Icons.chat_bubble_outline, title: 'Chats'),
-          FloatingNavbarItem(icon: Icons.settings, title: 'Settings'),
+          FloatingNavbarItem(icon: Icons.shopping_cart_rounded, title: 'Cart'),
+          FloatingNavbarItem(icon: Icons.person, title: 'Profile'),
         ],
       ),
     );

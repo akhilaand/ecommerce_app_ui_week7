@@ -1,7 +1,11 @@
-import 'package:cloth_app/constants/colors.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:google_fonts/google_fonts.dart';
-import '../../widgets/custom_container_button.dart';
+
+// Project imports:
+import 'package:cloth_app/constants/colors.dart';
 import 'components/build_gradient_container.dart';
 import 'components/build_landing_screen_message.dart';
 

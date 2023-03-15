@@ -1,8 +1,9 @@
-import 'package:cloth_app/widgets/custom_container_button.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
 
-import 'components/custom_appbar.dart';
-import 'components/custom_textfiled.dart';
+// Project imports:
+import '../../widgets/custom_appbar.dart';
+import '../../widgets/custom_textfiled.dart';
 import 'components/product_list_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -18,11 +19,11 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             child: Column(
               children: const [
-                CustomAppbarWidget(),
+                CustomAppbarWidget(title: "LG-LOPINS",),
                 SizedBox(
                   height: 25,
                 ),
-                CustomTextField(),
+                CustomTextField(hintText: "Search Product",),
                 SizedBox(
                   height: 25,
                 ),

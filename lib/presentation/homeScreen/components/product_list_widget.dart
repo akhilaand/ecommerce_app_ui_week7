@@ -1,11 +1,13 @@
-import 'package:cloth_app/constants/colors.dart';
-import 'package:cloth_app/data/product_list_data.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import '../../../widgets/custom_container_button.dart';
+// Package imports:
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
+// Project imports:
+import 'package:cloth_app/constants/colors.dart';
+import 'package:cloth_app/data/product_list_data.dart';
+import '../../../widgets/custom_container_button.dart';
 import 'build_product_container.dart';
 
 class ProductListWidget extends StatefulWidget {
@@ -21,7 +23,6 @@ class _ProductListWidgetState extends State<ProductListWidget> {
   bool isTrending = true;
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Column(children: [
       buildCategoryButtons(),
       const SizedBox(

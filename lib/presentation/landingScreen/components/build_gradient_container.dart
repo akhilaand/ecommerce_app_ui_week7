@@ -1,6 +1,9 @@
-import 'package:cloth_app/constants/colors.dart';
+// Flutter imports:
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+// Project imports:
+import 'package:cloth_app/constants/colors.dart';
 
 class BuildGradientedContainer extends StatelessWidget {
   const BuildGradientedContainer({
