@@ -15,8 +15,10 @@ class BuildCustomContainerButton extends StatelessWidget {
   final Color textColor;
   final double textSize;
   final bool isShadowRequired;
+  final VoidCallback onTap;
   const BuildCustomContainerButton({
     required this.buttonText,
+    required this.onTap,
     this.height=75,
     this.bgColor=black,
     this.textColor=white,
@@ -30,26 +32,29 @@ class BuildCustomContainerButton extends StatelessWidget {
     Size size=MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Container(
-        height: height,
-        width: size.width,
-        decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: isShadowRequired?Colors.grey.withOpacity(0.5):Colors.transparent,
-                spreadRadius: 5,
-                blurRadius: 7,
-                offset: const Offset(0, 3),
-              ),
-            ],
-            color: bgColor,
-            borderRadius: const BorderRadius.all(Radius.circular(40))),
-        child: Center(
-            child: Text(
-          buttonText,
-          style: GoogleFonts.roboto(
-              color: textColor, fontSize: textSize, fontWeight: FontWeight.w500),
-        )),
+      child: InkWell(
+        onTap: onTap,
+        child: Container(
+          height: height,
+          width: size.width,
+          decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: isShadowRequired?Colors.grey.withOpacity(0.5):Colors.transparent,
+                  spreadRadius: 5,
+                  blurRadius: 7,
+                  offset: const Offset(0, 3),
+                ),
+              ],
+              color: bgColor,
+              borderRadius: const BorderRadius.all(Radius.circular(40))),
+          child: Center(
+              child: Text(
+            buttonText,
+            style: GoogleFonts.roboto(
+                color: textColor, fontSize: textSize, fontWeight: FontWeight.w500),
+          )),
+        ),
       ),
     );
   }

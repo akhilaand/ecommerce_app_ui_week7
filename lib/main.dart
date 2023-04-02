@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 // Project imports:
+import 'package:cloth_app/presentation/landingScreen/landing_screen.dart';
 import 'package:cloth_app/widgets/bottom_navigation_bar.dart';
 
 void main() {
@@ -15,14 +16,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+    
       debugShowCheckedModeBanner: false,
       title: 'Fashion App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const CustomBottomNavigtionBar(),
+      home: const LandingScreen(),
     );
   }
 }
-
-

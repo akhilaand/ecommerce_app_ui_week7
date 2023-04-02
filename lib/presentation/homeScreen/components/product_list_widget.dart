@@ -59,6 +59,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                   });
                 },
                 child: BuildCustomContainerButton(
+                  onTap: () {},
                   buttonText: "Trending",
                   height: 55,
                   bgColor: isTrending ? black : pink100.withOpacity(0.1),
@@ -74,6 +75,7 @@ class _ProductListWidgetState extends State<ProductListWidget> {
                   });
                 },
                 child: BuildCustomContainerButton(
+                  onTap: () {},
                   buttonText: "Clothing",
                   height: 55,
                   bgColor: isTrending ? pink100.withOpacity(0.1) : black,

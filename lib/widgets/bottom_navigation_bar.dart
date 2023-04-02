@@ -2,21 +2,22 @@
 import 'package:flutter/material.dart';
 
 // Package imports:
-import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
+import 'package:bottom_nav_bar_pack/bottom_nav_bar_item.dart';
+import 'package:bottom_nav_bar_pack/bottom_nav_bar_pack.dart';
 
 // Project imports:
 import 'package:cloth_app/presentation/categoryScreen/category_screen.dart';
 import 'package:cloth_app/presentation/homeScreen/home_screen.dart';
 
-class CustomBottomNavigtionBar extends StatefulWidget {
-  const CustomBottomNavigtionBar({Key? key}) : super(key: key);
+class CustomBottomNavigationBar extends StatefulWidget {
+  const CustomBottomNavigationBar({Key? key}) : super(key: key);
 
   @override
-  State<CustomBottomNavigtionBar> createState() =>
-      _CustomBottomNavigtionBarState();
+  State<CustomBottomNavigationBar> createState() =>
+      _CustomBottomNavigationBarState();
 }
 
-class _CustomBottomNavigtionBarState extends State<CustomBottomNavigtionBar> {
+class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   static final _pageList = [
     const HomeScreen(),
     const CategoryScreen(),
@@ -27,25 +28,23 @@ class _CustomBottomNavigtionBarState extends State<CustomBottomNavigtionBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       body: _pageList[currentIndex],
-      extendBody: false,
-      bottomNavigationBar: FloatingNavbar(
-
+      extendBody: true,
+      bottomNavigationBar: DottedBottomAppBar(
         margin: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
         borderRadius: 25,
         itemBorderRadius: 20,
-        onTap: (int index) {
-          setState(() {
-            currentIndex = index;
-          });
-        },
         currentIndex: currentIndex,
         items: [
-          FloatingNavbarItem(icon: Icons.home, title: 'Home'),
-          FloatingNavbarItem(icon: Icons.explore, title: 'Explore'),
-          FloatingNavbarItem(icon: Icons.shopping_cart_rounded, title: 'Cart'),
-          FloatingNavbarItem(icon: Icons.person, title: 'Profile'),
+          BottomNavBarItem(icon: Icons.home, title: 'Home'),
+          BottomNavBarItem(icon: Icons.explore, title: 'Explore'),
+          BottomNavBarItem(icon: Icons.shopping_cart_rounded, title: 'Cart'),
+          BottomNavBarItem(icon: Icons.person, title: 'Profile'),
         ],
+        onTap: (int val) => setState(() {
+          currentIndex = val;
+        }),
       ),
     );
   }

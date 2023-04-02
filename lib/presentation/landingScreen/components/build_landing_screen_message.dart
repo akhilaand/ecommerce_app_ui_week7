@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 // Project imports:
 import '../../../constants/colors.dart';
+import '../../../widgets/bottom_navigation_bar.dart';
 import '../../../widgets/custom_container_button.dart';
 
 class BuildLandingScreenMessage extends StatelessWidget {
@@ -40,7 +41,10 @@ class BuildLandingScreenMessage extends StatelessWidget {
           const SizedBox(
             height: 35,
           ),
-          const BuildCustomContainerButton(
+           BuildCustomContainerButton(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: ((context) => const CustomBottomNavigationBar())));
+            },
             buttonText: "Sign Up with Email",
           ),
           const SizedBox(

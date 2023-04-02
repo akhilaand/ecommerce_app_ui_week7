@@ -22,6 +22,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  bottom_nav_bar_pack:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: develop
+      resolved-ref: "1e5208aebb87861769317e71e4b03004059352f5"
+      url: "https://github.com/akhilannd/bottom_navigation_bar_package"
+    source: git
+    version: "0.0.1"
   characters:
     dependency: transitive
     description:
@@ -78,13 +87,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.1.4"
-  floating_bottom_navigation_bar:
-    dependency: "direct main"
-    description:
-      name: floating_bottom_navigation_bar
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.5.2"
   flutter:
     dependency: "direct main"
     description: flutter
